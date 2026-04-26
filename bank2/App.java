@@ -1,4 +1,4 @@
-package com.bank2.bank2;
+
 
 class App {
     public static void main(String[] args) {
