@@ -1,58 +1,24 @@
 package com.bank2.bank2;
 
-import java.util.Scanner;
-
-class Bank {
+class App {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        double balance = 1000; // initial balance
-        int choice;
-        double amount;
+        double balance = 1000;
+        double deposit = 500;
+        double withdraw = 300;
 
-        do {
-            System.out.println("\n--- Bank Menu ---");
-            System.out.println("1. Check Balance");
-            System.out.println("2. Deposit");
-            System.out.println("3. Withdraw");
-            System.out.println("4. Exit");
-            System.out.print("Enter choice: ");
-            choice = sc.nextInt();
+        System.out.println("--- BANK APPLICATION ---");
 
-            switch (choice) {
-                case 1:
-                    System.out.println("Current Balance: " + balance);
-                    break;
+        System.out.println("Initial Balance: " + balance);
 
-                case 2:
-                    System.out.print("Enter deposit amount: ");
-                    amount = sc.nextDouble();
-                    balance = balance + amount;
-                    System.out.println("Amount Deposited.");
-                    break;
+        balance = balance + deposit;
+        System.out.println("Deposited: " + deposit);
 
-                case 3:
-                    System.out.print("Enter withdraw amount: ");
-                    amount = sc.nextDouble();
+        balance = balance - withdraw;
+        System.out.println("Withdrawn: " + withdraw);
 
-                    if (amount <= balance) {
-                        balance = balance - amount;
-                        System.out.println("Amount Withdrawn.");
-                    } else {
-                        System.out.println("Insufficient Balance.");
-                    }
-                    break;
+        System.out.println("Final Balance: " + balance);
 
-                case 4:
-                    System.out.println("Thank you for using Bank.");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice.");
-            }
-
-        } while (choice != 4);
-
-        sc.close();
+        System.out.println("Thank you for using Bank.");
     }
 }
